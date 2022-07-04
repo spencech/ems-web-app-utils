@@ -1,5 +1,5 @@
 # EMS Utils
-Utility methods that are frequently used in Educational Media Solutions web applications.
+Utility methods that are frequently used in Educational Media Solutions web applications on Angular.io.
 
 ## Usage
 
