@@ -1,0 +1,22 @@
+{
+  "name": "ems-web-app-utils",
+  "author": "Chris Spence",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^13.2.0",
+    "@angular/core": "^13.2.0",
+     "underscore": "^1.13.4",
+     "jquery": "^3.6.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.5.14",
+    "@types/underscore": "^1.11.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spencech/ems-web-app-utils.git"
+  }
+}
