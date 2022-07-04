@@ -137,9 +137,9 @@ Returns MySQL date/time string from optionally supplied date
 	const nowDateString = timestamp(); // whateve the current date time is
 
 ### trace(...parameters: any[])
-Outputs each argument to a line in console log
+Outputs each argument to a line in console log ** IF ?debug=true parameter is set on the url **
 
-	trace(someObject, anotherObject, "---", 123); //four console logs
+	trace(someObject, anotherObject, "---", 123); //four console logs at http://localhost/?debug=true
 
 ### trim(e: string): string
 Removes leading and trailing whitespace from string
