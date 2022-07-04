@@ -1,6 +1,30 @@
 # EMS Utils
 Utility methods that are frequently used in Educational Media Solutions web applications.
 
+## Usage
+
+	import { Component, AfterViewInit } from '@angular/core';
+	import { trace, delay } from "ems-web-app-utils";
+
+	@Component({
+	  selector: 'app-root',
+	  templateUrl: './app.component.html',
+	  styleUrls: ['./app.component.less']
+	})
+	export class AppComponent implements AfterViewInit {
+
+
+	  constructor() {
+
+	  }
+
+	  ngAfterViewInit() {
+	    delay(() => trace("view initialized"));
+	  }
+	}
+
+	
+
 ## Methods
 
 ### alphabetize(...parameters: any[]): any
