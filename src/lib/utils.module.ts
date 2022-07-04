@@ -209,12 +209,10 @@ export function viewport(el: HTMLElement, percentVisible: number = 100): boolean
 
 @NgModule({
   declarations: [
-    UtilsComponent
   ],
   imports: [
   ],
   exports: [
-    UtilsComponent
   ]
 })
 export class UtilsModule { }
