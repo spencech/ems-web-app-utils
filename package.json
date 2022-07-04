@@ -18,5 +18,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/spencech/ems-web-app-utils.git"
+  },
+  "scripts": {
+    "publish": "git add -A . && git commit -m 'prepublish npm package' && npm version patch && git add -A . && git commit -m 'publishing npm package'  && ng build utils && cd dist && npm publish"
   }
 }
