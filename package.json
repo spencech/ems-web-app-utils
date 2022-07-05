@@ -19,5 +19,17 @@
   },
   "scripts": {
     "publish": "git add -A . && git commit -m 'prepublish npm package' && npm version patch && ng build utils && cd dist && npm publish"
-  }
+  },
+  "keywords": [
+    "ems",
+    "educational media solutions",
+    "educational",
+    "media",
+    "solutions",
+    "web app",
+    "web application",
+    "utility",
+    "utilities",
+    "helper"
+  ]
 }

@@ -1,4 +1,5 @@
-# EMS Utils
+# EMS Web Application Components: Utility Methods
+
 Utility methods that are intended for use in Angular.io web applications developed by [Educational Media Solutions](https://educationalmediasolutions.com).
 
 Note that this module does not include components or services that must be declared in your module.ts file.
