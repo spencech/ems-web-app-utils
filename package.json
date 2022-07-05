@@ -2,7 +2,7 @@
   "name": "ems-web-app-utils",
   "author": "Chris Spence (https://educationalmediasolutions.com)",
   "description": "Utility methods that are intended for use in Angular.io web applications developed by [Educational Media Solutions](https://educationalmediasolutions.com)",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "peerDependencies": {
     "@angular/common": "^13.2.0",
     "@angular/core": "^13.2.0",
