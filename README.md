@@ -145,10 +145,11 @@ Returns MySQL date/time string from optionally supplied date
 	const date = new Date("2021/01/01"); 
 	const dateString = timestamp(date); // "2021-01-01 00:00:00";
 	const dateString2 = timestamp(date, false); // "2021-01-01";
-	const nowDateString = timestamp(); // whateve the current date time is
+	const nowDateString = timestamp(); // whatever the current date time is
 
 ### trace(...parameters: any[])
 Outputs each argument to a line in console log **IF ?debug=true parameter is set on the url**
+(This method is an homage to the like-named, late great ActionScript 2 utility function)
 
 	trace(someObject, anotherObject, "---", 123); //four console logs at http://localhost/?debug=true
 
@@ -182,6 +183,10 @@ Applies regex to test for valid email
 
 	validateEmail("test@test"); //false
 	validateEmail("test@test.co"); //true
+
+Uses regex ex:
+
+	/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
 ### viewport(el: HTMLElement, percentVisible: number = 100): boolean
 Determines whether the supplied object is within the browser's viewport
