@@ -1,6 +1,6 @@
 {
   "name": "ems-web-app-utils",
-  "author": "Chris Spence",
+  "author": "Chris Spence (https://educationalmediasolutions.com)",
   "version": "0.0.16",
   "peerDependencies": {
     "@angular/common": "^13.2.0",
