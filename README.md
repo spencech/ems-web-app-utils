@@ -1,7 +1,18 @@
 # EMS Utils
-Utility methods that are frequently used in Educational Media Solutions web applications on Angular.io.
+Utility methods that are frequently used in [Educational Media Solutions](https://educationalmediasolutions.com) web applications on Angular.io.
+
+Note that this module does not include components or services that must be declared in your module.ts file.
+
+These utility methods act like globally scoped functions (though they're not really).
+
+Note that there is a peer dependency defined for this library that must also be installed ([underscore.js](https://underscorejs.org))
 
 ## Usage
+
+	npm i underscore ems-web-app-utils --save
+
+
+Component Usage:
 
 	import { Component, AfterViewInit } from '@angular/core';
 	import { trace, delay } from "ems-web-app-utils";
@@ -83,8 +94,8 @@ Evaluates whether supplied object is falsy or empty
 ### focus(selector: string): number
 Sets browser focus on supplied element
 
-	const $button = $("body").add("<button>Focus Me</button>");
-	focus($button); //focuses button after one turn of JS engine
+	const $button = $("body").add("<button class='focus-me'>Focus Me</button>");
+	focus(".focus-me"); //focuses button after one turn of JS engine
 
 ### getLargestRemainder(values: number[], desiredSum: number): number[]
 Handles rounding errors when calculating sub percentages of a data set. Ensures that all segments add up to 100%.

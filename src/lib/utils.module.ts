@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { UtilsComponent } from './utils.component';
 import * as _ from 'underscore';
-import * as $ from 'jquery';
 
 export function alphabetize(...parameters: any[]): any {
   if (typeof parameters[0] === 'string') {
@@ -72,7 +71,9 @@ export function falsy(e: any): boolean {
 }
 
 export function focus(selector: string): number {
-  return delay(() => $(selector).focus());
+  const element = document.querySelector(selector) as HTMLElement;
+  if(!element || !element.focus) return 0;
+  return delay(() => element.focus());
 }
 
 export function getLargestRemainder(values: number[], desiredSum: number) {
