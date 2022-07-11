@@ -3,6 +3,8 @@
   "author": "Chris Spence (https://educationalmediasolutions.com)",
   "description": "Utility methods that are intended for use in Angular.io [web applications developed by Educational Media Solutions](https://github.com/spencech/ems-web-app-template)",
   "version": "0.0.19",
+  "funding": "https://paypal.me/spencech",
+  "license": "MIT",
   "peerDependencies": {
     "@angular/common": "^13.2.0",
     "@angular/core": "^13.2.0",
@@ -31,6 +33,9 @@
     "web application",
     "utility",
     "utilities",
-    "helper"
+    "helper",
+    "angular.io",
+    "angular",
+    "module"
   ]
 }
