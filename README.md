@@ -141,7 +141,7 @@ A combination of `tick` and `delay` called with an async function to pause the e
 		await sleep(0);
 		$(".element-to-transition-in").addClass("render");
 		await sleep(250);
-		console.log("transition complete");
+		console.log("transition complete!");
 	}
 
 ### snakecase(e: string): string
