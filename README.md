@@ -130,6 +130,20 @@ Swaps an item in an array with a newer value
 	const array2 = [ { id: 1, name: "Old Name" }, { id: 2, name: "Test User" }];
 	replaceItem(array, { id: 200, name: "Test User" }, "name"); // [ { id: 1, name: "Old Name" }, { id: 200, name: "Test User" }]
 
+### sleep(duration: number = 0):Promise<number>
+A combination of `tick` and `delay` called with an async function to pause the execution for the provided number of milliseconds.
+
+	async function doSomething() {
+		$(".element-to-transition-out.render").removeClass("render");
+		await sleep(250)
+		$(".element-to-transition-out").hide();
+		$(".element-to-transition-in").show();
+		await sleep(0);
+		$(".element-to-transition-in").addClass("render");
+		await sleep(250);
+		console.log("transition complete");
+	}
+
 ### snakecase(e: string): string
 Converts string to snake case
 

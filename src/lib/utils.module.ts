@@ -151,6 +151,12 @@ export function replaceItem(array: any[], item: any, key: string = 'id', positio
   return item;
 }
 
+export function sleep(duration: number = 0) {
+  return new Promise((resolve: (value: any) => void) => {
+    delay(() => resolve(duration), duration);
+  });
+}
+
 export function snakecase(e: string): string {
   if (_.isEmpty(e)) return e;
   return e.toLowerCase().replace(/\s+/gim, '_').replace(/-/g, '_').replace(/_+/g, '_');
