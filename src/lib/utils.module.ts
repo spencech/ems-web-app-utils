@@ -66,6 +66,14 @@ export function enumKeys<O extends object, K extends keyof O = keyof O>(obj: O):
     return Object.keys(obj).filter(k => Number.isNaN(+k)) as K[];
 }
 
+export function enumValues<O extends object, K extends keyof O = keyof O>(obj: O): any[] {
+    const output = []
+    for (const value of enumKeys(obj)) {
+      output.push(obj[value]);    
+    }
+    return output as any[];
+}
+
 export function falsy(e: any): boolean {
   if (typeof e === 'string' && trim(e).match(/^false$/i)) return true;
   if (typeof e === 'string') return _.isEmpty(e.replace(/\s+/gim, ''));

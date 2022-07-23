@@ -76,6 +76,34 @@ Downloads in memory string as file (in web browser)
 ### empty(e: any): boolean
 	alias for falsy
 
+### enumKeys<O extends object, K extends keyof O = keyof O>(obj: O): K[]
+Returns an array of keys in an enum typescript object
+
+	enum Grade {
+	  K = "K",
+	  Grade1 = "1",
+	  Grade2 = "2",
+	  Grade3 = "3",
+	  Grade4 = "4",
+	  Grade5 = "5"
+	}
+
+	const keys = enumKeys(Grade); // ["K", "Grade1", "Grade2", "Grade3", "Grade4", "Grade5"];
+
+### enumValues<O extends object, K extends keyof O = keyof O>(obj: O): any[]
+Returns an array of values in an enum typescript object
+
+	enum Grade {
+	  K = "K",
+	  Grade1 = "1",
+	  Grade2 = "2",
+	  Grade3 = "3",
+	  Grade4 = "4",
+	  Grade5 = "5"
+	}
+
+	const values = enumValues(Grade); // ["K", "1", "2", "3", "4", "5"];
+
 ### falsy(e: any): boolean
 Evaluates whether supplied object is falsy or empty
 
