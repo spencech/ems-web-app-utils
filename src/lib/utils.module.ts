@@ -28,6 +28,23 @@ export function clone(obj: any): any {
   return JSON.parse(JSON.stringify(obj));
 }
 
+export function convertToEST(date: string): string {
+  const gmtDate = new Date(date + " GMT");
+  const options: Intl.DateTimeFormatOptions = {
+    timeZone: 'America/New_York',
+    year: "numeric",
+    month: 'numeric',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric',
+    hour12: true
+  };
+  
+  const formatter = new Intl.DateTimeFormat('en-US', options);
+  return formatter.format(gmtDate);
+}
+
 export function dateStrings(date?: Date) {
   date = date || new Date();
   return {
@@ -140,6 +157,33 @@ export function kebab(e: string): string {
   return e.toLowerCase().replace(/\s+/gim, '-').replace(/_/g, '-').replace(/-+/g, '-');
 }
 
+export function paginate(method: (offset: number, limit: number) => any, offset: number, limit: number, key: string, output: any[] = [], callback?: (allRows:any[], newRows: any[]) => void, prevResolve?: (result: any) => void) {
+    return new Promise(async (resolve: (result: any) => void, reject: (result: any) => void) => {
+      let response;
+      try {
+        response = await method(offset, limit);
+      } catch(e: any) {
+        reject(e);
+      }
+      
+      output = output.concat(response[key]);
+      
+      if(callback) callback(output, response[key]);
+      
+      if(response.nextPage) {
+        await paginate(method, response.nextPage, limit, key, output, callback, prevResolve ?? resolve)
+      } else {
+        (prevResolve ?? resolve)(output);
+      }
+      
+    });
+}
+
+export function prepareSearchString(value: string): string {
+    if(!value) return "";
+    return value.toLowerCase().replace(/\s+/gim,"");
+}
+
 export function replaceItem(array: any[], item: any, key: string = 'id', position: string = 'current'): any {
   const lookup = {} as any;
   lookup[key] = item[key];
@@ -182,7 +226,7 @@ export function tick(returnValue?: any): Promise<any> {
 
 export function timestamp(date?: Date, includeTime: boolean = true): string {
   const info = dateStrings(date);
-  const time = `${info.time}:${info.seconds}`;
+  const time = ` ${info.time}:${info.seconds}`;
   return `${info.year}-${info.month}-${info.date}${includeTime ? time : ''}`;
 }
 
