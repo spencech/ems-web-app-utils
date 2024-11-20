@@ -268,6 +268,34 @@ export function viewport(el: HTMLElement, percentVisible: number = 100): boolean
   );
 }
 
+export function password(length): string {
+  const upperCaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  const lowerCaseChars = 'abcdefghijklmnopqrstuvwxyz';
+  const numbers = '0123456789';
+  const specialChars = '!@#$%^&*()-_=+[]{}|;:,.<>?';
+  length = length ?? 8;
+
+  // Ensure each type of character appears at least once
+  const password = [
+    upperCaseChars[Math.floor(Math.random() * upperCaseChars.length)], // One uppercase
+    lowerCaseChars[Math.floor(Math.random() * lowerCaseChars.length)], // One lowercase
+    numbers[Math.floor(Math.random() * numbers.length)], // One number
+    specialChars[Math.floor(Math.random() * specialChars.length)], // One special char
+  ];
+
+  // Pool of all allowed characters for remaining password characters
+  const allChars = upperCaseChars + lowerCaseChars + numbers + specialChars;
+
+  // Fill the rest of the password length (64 characters) with random characters
+  for (let i = password.length; i < length; i++) {
+    password.push(allChars[Math.floor(Math.random() * allChars.length)]);
+  }
+
+  // Shuffle the password array to ensure randomness, then join it into a string
+  const randomPassword = password.sort(() => Math.random() - 0.5).join('');
+  return randomPassword;
+}
+
 
 
 @NgModule({
