@@ -272,7 +272,7 @@ export function password(length: number): string {
   const upperCaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   const lowerCaseChars = 'abcdefghijklmnopqrstuvwxyz';
   const numbers = '0123456789';
-  const specialChars = '!@#$%^&*()-_=+[]{}|;:,.<>?';
+  const specialChars = '!@#$%^&*()-_=+[]|;:,.?';
   length = length ?? 8;
 
   // Ensure each type of character appears at least once
