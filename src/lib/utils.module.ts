@@ -268,7 +268,7 @@ export function viewport(el: HTMLElement, percentVisible: number = 100): boolean
   );
 }
 
-export function password(length): string {
+export function password(length: number): string {
   const upperCaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   const lowerCaseChars = 'abcdefghijklmnopqrstuvwxyz';
   const numbers = '0123456789';
